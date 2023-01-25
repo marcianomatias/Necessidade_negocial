@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/sobre'
-  #get '/contato', to: 'static_pages#contato'
-  get 'static_pages/contato'
+  get 'sobre', to: 'static_pages#sobre' 
+  get 'contato', to: 'static_pages#contato'
 
   resources :conta_correntes
   resources :clientes
