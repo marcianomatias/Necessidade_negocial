@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Conta correntes</h1>
+
+<div id="conta_correntes">
+  <% @conta_correntes.each do |conta_corrente| %>
+    <%= render conta_corrente %>
+    <p>
+      <%= link_to "Show this conta corrente", conta_corrente %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New conta corrente", new_conta_corrente_path %>
