@@ -82,7 +82,4 @@ rails g model Movement role client:references value date client_to:references
 8. Extrato (cadastro)
 
 
-
-
-
 Realizado por Marciano Matias
