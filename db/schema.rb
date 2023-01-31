@@ -10,32 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_25_002413) do
-  create_table "clientes", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_140343) do
+  create_table "clients", force: :cascade do |t|
     t.string "name"
-    t.integer "cpf"
+    t.string "cpf"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 1
   end
 
-  create_table "conta", force: :cascade do |t|
-    t.decimal "saldo"
-    t.integer "cliente_id", null: false
+  create_table "movements", force: :cascade do |t|
+    t.string "role"
+    t.integer "client_id", null: false
+    t.string "value"
+    t.string "date"
+    t.integer "client_to_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cliente_id"], name: "index_conta_on_cliente_id"
+    t.index ["client_id"], name: "index_movements_on_client_id"
+    t.index ["client_to_id"], name: "index_movements_on_client_to_id"
   end
 
-  create_table "conta_correntes", force: :cascade do |t|
-    t.decimal "saldo"
-    t.integer "cliente_id", null: false
-    t.float "numero"
-    t.string "agencia"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cliente_id"], name: "index_conta_correntes_on_cliente_id"
-  end
-
-  add_foreign_key "conta", "clientes"
-  add_foreign_key "conta_correntes", "clientes"
+  add_foreign_key "movements", "client_tos"
+  add_foreign_key "movements", "clients"
 end

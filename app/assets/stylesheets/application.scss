@@ -2,8 +2,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$gray-medium-light: #EAEAEA;
-
+$gray-medium-light: #2e1f66;
+.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: 0 -20px; /* indenta o padding negativo para preservar o grid */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
 footer {
   margin-top: 45px;
   padding-top: 5px;
