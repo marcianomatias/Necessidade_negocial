@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_scope :user do
+    # Redirests signing out users back to sign-in
+    get "users", to: "devise/sessions#new"
+  end
+devise_for :users
 
   get 'sobre', to: 'static_pages#sobre' 
   get 'contato', to: 'static_pages#contato'

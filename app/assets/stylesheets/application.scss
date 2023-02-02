@@ -1,6 +1,7 @@
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+//@import "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+//@import "bootstrap-responsive";
 
 $gray-medium-light: #2e1f66;
 .content {
